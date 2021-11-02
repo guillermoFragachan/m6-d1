@@ -43,10 +43,10 @@ const createProduct = async (req, res, _next) => {
 
 const updateUserById = async (req, res, next) => {
   
-    const { name, last_name, email } = req.body
+    const {name, description, brand, price, image_url } = req.body
     const data = await pool.query(
       "UPDATE products SET name=$1,last_name=$2,email=$3 WHERE id=$4 RETURNING *;",
-      [name, last_name, email, req.params.id]
+      [name, description, brand, price, image_url, req.params.id]
     )
     res.send(data.rows[0])
  
