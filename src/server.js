@@ -14,6 +14,7 @@ server.use(express.json())
 
 server.use("/products", productsRouter);
 
+
 const {PORT} = process.env;
 
 console.table(listEndpoints(server))
