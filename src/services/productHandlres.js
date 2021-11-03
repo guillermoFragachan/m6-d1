@@ -104,7 +104,6 @@ const deleteReviews = async (req, res, _next) =>{
   await pool.query("DELETE FROM reviews WHERE id=$1", [req.params.id])
   res.status(204).send();
 
-  res.status(400).send(error.message)
 }
 const productHandlres = {
   getAll,
